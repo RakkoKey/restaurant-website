@@ -1,5 +1,7 @@
 //console.log("Hi");
 import {addElements} from "./menu";
+import './style.css';
+
 var content = document.getElementById("content");
 const buttons = document.getElementsByTagName("button");
 console.log(buttons);
