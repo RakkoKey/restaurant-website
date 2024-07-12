@@ -1,1 +1,1 @@
-console.log("Hi"),document.getElementById("content");
+(()=>{console.log("Hi");var t=document.getElementById("content");const e=document.getElementsByName("button");function n(){for(;t.firstChild;)t.removeChild(t.lastChild)}for(let t=0;t<e.length;t++)e[t].addEventListener("click",(function(){n()}))})();
