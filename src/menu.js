@@ -1,3 +1,4 @@
+import background from './images/food.jpeg'
 const contentDiv = document.getElementById("content");
 function addElements(){
     console.log("menu command run");

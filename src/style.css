@@ -38,4 +38,15 @@ h2, #allbuttons{
     display:flex;
     align-items: center;
     justify-content: center;
+    background-image: url("./images/food.jpeg");
+    margin: 12px;
+    
+    height:30vh;
+    
+}
+
+
+#herotext{
+    opacity: 1;
+    color: white;
 }
