@@ -1,3 +1,39 @@
+body{
+    height:100vh;
+    background-color: cyan;
+    margin:0;
+}
+
+nav{
+    margin:0;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: antiquewhite;
+}
+h2, #allbuttons{
+    margin:12px;
+    margin-bottom: 24px;
+}
+.navbutton{
+  background-color: transparent;
+  border: 1px solid #266DB6;
+  box-sizing: border-box;
+  color: #00132C;
+  font-family: "Avenir Next LT W01 Bold",sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  padding: 16px 23px;
+  position: relative;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+
+
 #header{
     display:flex;
     align-items: center;

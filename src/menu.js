@@ -5,8 +5,9 @@ function addElements(){
     var header = document.createElement('div');
     header.setAttribute("id", "header");
     
-    var menuText = document.createElement('p');
+    var menuText = document.createElement('h1');
     menuText.innerHTML = "Menu";
+    menuText.setAttribute("id", "herotext");
     header.appendChild(menuText);
     contentDiv.appendChild(header);
     //create header for menu
