@@ -14,7 +14,10 @@ function resetContent(){
 for(let i = 0; i < buttons.length; i++){
     buttons[i].addEventListener('click', function(){
         resetContent();
-        addElements();
+        if(buttons[i].getAttribute('id') == "Menu"){
+            addElements();
+        }
+        
         console.log("clicked");
         //change content
     });
