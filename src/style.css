@@ -64,6 +64,9 @@ h2, #allbuttons{
     margin:12px;
     list-style: none;
     font-size:32pt;
+    border-style:solid;
+    padding:20px;
+    
 }
 li{
     color: #f7e7dc;
@@ -79,6 +82,7 @@ li{
 .menuButton{
     color: white;
     font-size: 16px;
+    margin:6px;
     border: 2px solid black;
     font-weight: 600;
     background-color: transparent;
@@ -95,4 +99,7 @@ li{
     display:flex;
     justify-content: center;
     align-items: center;
+}
+span{
+    margin-right:10px;
 }

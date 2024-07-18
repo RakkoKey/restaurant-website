@@ -1,5 +1,7 @@
 import background from './images/food.jpeg'
 const contentDiv = document.getElementById("content");
+const buttons = [];
+var menuList = document.createElement('ul');
 function addElements(){
     console.log("menu command run");
     
@@ -15,23 +17,45 @@ function addElements(){
     var menuButtons = document.createElement('div');
     menuButtons.setAttribute('id', "menuButtons");
 
+
+    var mainMenubutton = document.createElement('button');
+    mainMenubutton.innerHTML = "Main Menu";
+    mainMenubutton.classList.add('menuButton');
+    mainMenubutton.setAttribute('id', "Main")
+
     var kidsMenubutton = document.createElement('button');
     kidsMenubutton.innerHTML = "Kids";
     kidsMenubutton.classList.add("menuButton");
+    kidsMenubutton.setAttribute('id', "Kids")
 
     menuButtons.append(kidsMenubutton);
-    contentDiv.append(menuButtons);
-    
-    
-    //create header for menu;
+    menuButtons.append(mainMenubutton);
 
+    contentDiv.append(menuButtons);
+    buttons.push(mainMenubutton);
+    buttons.push(kidsMenubutton);
     //create div for menu items
     createMenu();
+
+    //button listeners
+    for(let i = 0; i < buttons.length; i++){
+        buttons[i].addEventListener('click', function(){
+            switch(buttons[i].getAttribute('id')){
+                case("Main"):
+                    createMenu();
+                    break;
+                case("Kids"):
+                    changeContent();
+                    break;
+
+            }
+        });
+    }
 
 }
 function createMenu(){
     
-    var menuList = document.createElement('ul');
+    
     
     menuList.setAttribute("id", "menu");
     const menuItems = ["Sandwich", "Salad", "Burger", "Pasta", "Pizza", "Cake"];
@@ -56,8 +80,8 @@ function createMenu(){
 
         newElement.appendChild(itemDiv);
         var span = document.createElement('span');
-        span.innerHTML = "$"
-        newElement.innerHTML += ("$" + priceItems[i]);
+        span.innerHTML = "$" + priceItems[i];
+        newElement.appendChild(span);
         
 
         
@@ -69,4 +93,10 @@ function createMenu(){
         menuList.appendChild(menuListItems[j]);
     }
 }
+function changeContent(){
+    while(menuList.firstChild){
+        menuList.removeChild(menuList.lastChild);
+    }
+}
+
 export{contentDiv, createMenu, addElements};
