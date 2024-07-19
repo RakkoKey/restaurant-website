@@ -2,6 +2,7 @@ import background from './images/food.jpeg'
 const contentDiv = document.getElementById("content");
 const buttons = [];
 var menuList = document.createElement('ul');
+menuList.setAttribute("id", "menu");
 function addElements(){
     console.log("menu command run");
     
@@ -42,10 +43,12 @@ function addElements(){
         buttons[i].addEventListener('click', function(){
             switch(buttons[i].getAttribute('id')){
                 case("Main"):
+                    changeContent();
                     createMenu();
                     break;
                 case("Kids"):
                     changeContent();
+                    createKidsMenu();
                     break;
 
             }
@@ -57,7 +60,7 @@ function createMenu(){
     
     
     
-    menuList.setAttribute("id", "menu");
+    
     const menuItems = ["Sandwich", "Salad", "Burger", "Pasta", "Pizza", "Cake"];
     const priceItems = ["10", "12", "13", "11", "15", "8"];
     const itemsdescription = ["A hearty sandwich containing turkey slices, iceberg lettuce, tomato, with a slice of cheddar cheese",
@@ -93,6 +96,45 @@ function createMenu(){
         menuList.appendChild(menuListItems[j]);
     }
 }
+
+function createKidsMenu(){  
+    const menuItems = ["Chicken Tenders", "Chicken Nuggets", "Fries", "Apple Slices"];
+    const priceItems = ["8", "5", "4", "3"];
+    const itemsdescription = ["Long, chicken tenders made for a child to enjoy", "Bite-sized nuggets for kids", "Freshly cut potato fries with a dash of salt and pepper", "Refreshing apple slices for a healthy snack"];
+    const menuListItems = [];
+
+    for(let i = 0; i < menuItems.length; i++){
+        var newElement = document.createElement('li');
+
+        var itemDiv = document.createElement('div');
+        itemDiv.classList.add("foodName");
+        itemDiv.innerHTML = menuItems[i];
+
+        var description = document.createElement('p');
+        description.classList.add("description");
+        description.innerHTML = itemsdescription[i];
+
+        itemDiv.appendChild(description);
+
+
+        newElement.appendChild(itemDiv);
+        var span = document.createElement('span');
+        span.innerHTML = "$" + priceItems[i];
+        newElement.appendChild(span);
+        
+
+        
+        menuListItems.push(newElement);
+    }
+    contentDiv.appendChild(menuList);
+    
+    for(let j = 0; j < menuListItems.length; j++){
+        menuList.appendChild(menuListItems[j]);
+    }
+
+}
+
+
 function changeContent(){
     while(menuList.firstChild){
         menuList.removeChild(menuList.lastChild);
