@@ -1,5 +1,6 @@
 //console.log("Hi");
 import {addElements} from "./menu";
+import {addDescription} from "./about";
 import './style.css';
 
 var content = document.getElementById("content");
@@ -14,11 +15,16 @@ function resetContent(){
 for(let i = 0; i < buttons.length; i++){
     buttons[i].addEventListener('click', function(){
         resetContent();
-        if(buttons[i].getAttribute('id') == "Menu"){
-            addElements();
+        switch(buttons[i].getAttribute('id')){
+            case("Menu"):
+                addElements();
+                break;
+            case("About"):
+                addDescription();
+                break;
         }
         
         console.log("clicked");
         //change content
-    });
+    }); 
 }

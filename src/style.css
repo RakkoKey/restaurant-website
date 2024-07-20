@@ -7,7 +7,9 @@ body{
     margin:0;
     font-family: "Sen",sans-serif;
 }
-
+p{
+    color:#f7e7dc
+}
 nav{
     margin:0;
     display:flex;
