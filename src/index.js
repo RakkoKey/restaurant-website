@@ -22,9 +22,15 @@ for(let i = 0; i < buttons.length; i++){
             case("About"):
                 addDescription();
                 break;
+            case("Home"):
+                addHomePage():
+                break;
         }
         
         console.log("clicked");
         //change content
     }); 
+}
+function addHomePage(){
+    
 }
