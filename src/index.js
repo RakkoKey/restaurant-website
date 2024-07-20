@@ -23,7 +23,7 @@ for(let i = 0; i < buttons.length; i++){
                 addDescription();
                 break;
             case("Home"):
-                addHomePage():
+                addHomePage();
                 break;
         }
         
@@ -32,5 +32,21 @@ for(let i = 0; i < buttons.length; i++){
     }); 
 }
 function addHomePage(){
-    
+    var header = document.createElement('div');
+    header.setAttribute("id", "header");
+    content.appendChild(header);
+
+    var menuText = document.createElement('h1');
+    menuText.innerHTML = "Home";
+    menuText.setAttribute("id", "herotext");
+    header.appendChild(menuText);
+
+    var welcomeSign = document.createElement('h2');
+    welcomeSign.innerHTML = "Welcome";
+    welcomeSign.setAttribute('id', "welcome");
+    content.appendChild(welcomeSign);
+
+
+
 }
+addHomePage();
