@@ -49,4 +49,4 @@ function addDescription(){
 
 
 }
-export{addDescription};
+export{addDescription, topicHeader};
