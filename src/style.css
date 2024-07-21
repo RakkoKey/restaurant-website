@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap');
 
 body{
+    display:flex;
+    flex-direction: column;
     height:100vh;
     background-color: #405d72;
     margin:0;
@@ -11,7 +13,7 @@ p{
     color:#f7e7dc;
     font-size:18px;
 }
-nav{
+nav, footer{
     margin:0;
     display:flex;
     justify-content: space-between;
@@ -109,4 +111,15 @@ span{
 .topics{
     margin:8px;
     color:#FFF8F3;
+}
+footer{
+    position: fixed;
+    display:flex;
+    flex-direction: column;
+    bottom:0;
+    width:100%;
+    
+}
+footer > p{
+    color:black;
 }

@@ -4,6 +4,8 @@ const buttons = [];
 var menuList = document.createElement('ul');
 menuList.setAttribute("id", "menu");
 function addElements(){
+    changeContent();
+    
     console.log("menu command run");
     
     var header = document.createElement('div');

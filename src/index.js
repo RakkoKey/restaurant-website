@@ -7,8 +7,11 @@ var content = document.getElementById("content");
 const buttons = document.getElementsByTagName("button");
 console.log(buttons);
 function resetContent(){
+    
     while(content.firstChild){
+        console.log("in while loop");
         content.removeChild(content.lastChild);
+
     }
 }
 
@@ -17,6 +20,7 @@ for(let i = 0; i < buttons.length; i++){
         resetContent();
         switch(buttons[i].getAttribute('id')){
             case("Menu"):
+                
                 addElements();
                 break;
             case("About"):
@@ -66,7 +70,21 @@ function addHomePage(){
 
     content.appendChild(box);
 
+    
 
 
 }
+
+function addFooter(){
+    var footer = document.createElement('footer');
+    footer.setAttribute('id', 'footer');
+
+    var attribution = document.createElement('p')
+    attribution.innerHTML = "Created by: RakkoKey";
+    footer.appendChild(attribution);
+
+    
+    content.appendChild(footer);
+}
 addHomePage();
+addFooter();
