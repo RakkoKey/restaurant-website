@@ -1,11 +1,12 @@
 //console.log("Hi");
 import {addElements} from "./menu";
 import {addDescription, topicHeader} from "./about";
+import foodImage from "./images/food2.jpg";
 import './style.css';
 
 var content = document.getElementById("content");
 var body =  document.getElementsByTagName('body');
-const buttons = document.getElementsByTagName("button");
+const buttons = document.getElementsByClassName("navbutton");
 console.log(buttons);
 function resetContent(){
     
@@ -73,7 +74,7 @@ function addHomePage(){
 
 
     content.appendChild(box);
-
+    addImage();
     
 
 
@@ -90,5 +91,46 @@ function addFooter(){
     
     body[0].appendChild(footer);
 }
+
+function addImage(){
+    var middleDiv = document.createElement('div');
+    var image = new Image();
+    image.src = foodImage;
+    
+
+
+    middleDiv.appendChild(image);
+    middleDiv.setAttribute('id','foodexample');
+
+    var menuTextBox = document.createElement('div');
+    menuTextBox.setAttribute('id', "menuTextBox");
+
+    var menuTextHeading = document.createElement('h4');
+    menuTextHeading.innerHTML = "Our Menu"
+    menuTextHeading.classList.add("topics")
+
+    var shortText = document.createElement('p');
+    shortText.innerHTML = "Check out our menus";
+    
+
+    var middleButton = document.createElement('button');
+    middleButton.innerHTML = "Menu";
+    middleButton.classList.add("middlebutton");
+    middleButton.addEventListener('click', function(){
+        resetContent();
+        addElements();
+    })
+
+
+    menuTextBox.appendChild(menuTextHeading);
+    menuTextBox.appendChild(shortText);
+    menuTextBox.appendChild(middleButton);
+
+    middleDiv.appendChild(menuTextBox);
+
+    document.getElementById('menu').appendChild(middleDiv);
+} 
+
+
 addHomePage();
 addFooter();
