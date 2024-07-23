@@ -4,6 +4,7 @@ import {addDescription, topicHeader} from "./about";
 import './style.css';
 
 var content = document.getElementById("content");
+var body =  document.getElementsByTagName('body');
 const buttons = document.getElementsByTagName("button");
 console.log(buttons);
 function resetContent(){
@@ -22,14 +23,17 @@ for(let i = 0; i < buttons.length; i++){
             case("Menu"):
                 
                 addElements();
+                
                 break;
             case("About"):
                 addDescription();
                 break;
             case("Home"):
                 addHomePage();
+                
                 break;
         }
+        
         
         console.log("clicked");
         //change content
@@ -84,7 +88,7 @@ function addFooter(){
     footer.appendChild(attribution);
 
     
-    content.appendChild(footer);
+    body[0].appendChild(footer);
 }
 addHomePage();
 addFooter();
